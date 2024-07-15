@@ -16,7 +16,7 @@ async function shareCanvas() {
     files: filesArray,
     title: "Twibbon Aplikasi",
     text: "Twibbon adalah cara sederhana untuk mengekspresikan dukungan dan partisipasi kita dalam suatu acara atau gerakan.",
-    url: "https://developer.mozilla.org",
+    url: "https://jiinbe.github.io/pfp/",
   };
   navigator.share(shareData);
 }
