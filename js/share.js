@@ -15,7 +15,7 @@ async function shareCanvas() {
   const shareData = {
     files: filesArray,
     title: "Twibbon Aplikasi",
-    text: "Learn web development on MDN!",
+    text: "Twibbon adalah cara sederhana untuk mengekspresikan dukungan dan partisipasi kita dalam suatu acara atau gerakan.",
     url: "https://developer.mozilla.org",
   };
   navigator.share(shareData);
