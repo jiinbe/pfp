@@ -61,13 +61,6 @@ reader.readAsDataURL(this.files[0]);
 }
 }
 function dlCanvas() {
-  
-let file = document.getElementById("imageupload").files[0];
-if(file) {
-alert(file.size + " in bytes"); 
-} else { 
-alert("Tidak ada gambar yang dipilih!"); 
-}
 capture = true;
 draw();
 var dt = canvas.toDataURL('image/png');
@@ -162,6 +155,20 @@ return setInterval(draw, 5);
 
 init();
 
+// input
 function selectFile() {
 document.getElementById("imageupload").click();
 }
+
+let fileInput = document.getElementById("imageupload");
+fileInput.addEventListener("change", function () {
+         
+// check if the file is selected or not
+if (fileInput.files.length == 0) {
+clickButton.disabled = true;
+clickButton.opacity = 0.3;
+} else {
+clickButton.disabled = false;
+clickButton.style.opacity = 1;
+}
+});
