@@ -160,6 +160,7 @@ function selectFile() {
 document.getElementById("imageupload").click();
 }
 
+let clickButton = document.getElementById("dl");
 let fileInput = document.getElementById("imageupload");
 fileInput.addEventListener("change", function () {
          
