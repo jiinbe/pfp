@@ -137,6 +137,7 @@ canvas.onmousemove = null;
 
 function init() {
 canvas = document.getElementById("canvas");
+canvas.item(0).hasControls = canvas.item(0).hasBorders = false;
 canvas.width = WIDTH;
 canvas.height = HEIGHT;
 ctx = canvas.getContext("2d");
