@@ -106,7 +106,8 @@ border-color: #666;
 }
 
 button:hover {
-background: #999;
+opacity: 0.6;
+cursor: not-allowed;
 transform: scale(1.05);
 }
 
