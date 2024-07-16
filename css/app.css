@@ -125,6 +125,7 @@ margin: 0 auto;
 
 #particles-js {
 position: absolute;
+overflow: hidden;
 height: auto;
 width: 100%;
 }
