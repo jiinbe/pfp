@@ -119,7 +119,7 @@ margin: 0 auto;
 
 #particles-js {
 position: absolute;
-height: 100%;
+height: auto;
 width: 100%;
 }
 
