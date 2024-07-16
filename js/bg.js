@@ -1,112 +1,133 @@
-/* ---- particles.js config ---- */
+(function fairyDustCursor() {
+  
+  var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  var cursor = {x: width/2, y: width/2};
+  var particles = [];
+  
+  function init() {
+    bindEvents();
+    loop();
+  }
+  
+  // Bind events that are needed
+  function bindEvents() {
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('touchmove', onTouchMove);
+    document.addEventListener('touchstart', onTouchMove);
+    
+    window.addEventListener('resize', onWindowResize);
+  }
+  
+  function onWindowResize(e) {
+    width = window.innerWidth;
+    height = window.innerHeight;
+  }
+  
+  function onTouchMove(e) {
+    if( e.touches.length > 0 ) {
+      for( var i = 0; i < e.touches.length; i++ ) {
+        addParticle( e.touches[i].clientX, e.touches[i].clientY, possibleColors[Math.floor(Math.random()*possibleColors.length)]);
+      }
+    }
+  }
+  
+  function onMouseMove(e) {    
+    cursor.x = e.clientX;
+    cursor.y = e.clientY;
+    
+    addParticle( cursor.x, cursor.y, possibleColors[Math.floor(Math.random()*possibleColors.length)]);
+  }
+  
+  function addParticle(x, y, color) {
+    var particle = new Particle();
+    particle.init(x, y, color);
+    particles.push(particle);
+  }
+  
+  function updateParticles() {
+    
+    // Updated
+    for( var i = 0; i < particles.length; i++ ) {
+      particles[i].update();
+    }
+    
+    // Remove dead particles
+    for( var i = particles.length -1; i >= 0; i-- ) {
+      if( particles[i].lifeSpan < 0 ) {
+        particles[i].die();
+        particles.splice(i, 1);
+      }
+    }
+    
+  }
+  
+  function loop() {
+    requestAnimationFrame(loop);
+    updateParticles();
+  }
+  
+  /**
+   * Particles
+   */
+  
+  function Particle() {
 
-particlesJS("particles-js", {
-  particles: {
-    number: {
-      value: 80,
-      density: {
-        enable: true,
-        value_area: 800
-      }
-    },
-    color: {
-      value: ["#2EB67D", "#ECB22E", "#E01E5B", "#36C5F0"]
-    },
-    shape: {
-      type: ["circle"],
-      stroke: {
-        width: 0,
-        color: "#fff"
-      },
-      polygon: {
-        nb_sides: 5
-      },
-      image: {
-        src: "https://cdn.freebiesupply.com/logos/large/2x/slack-logo-icon.png",
-        width: 100,
-        height: 100
-      }
-    },
-    opacity: {
-      value: 1,
-      random: false,
-      anim: {
-        enable: false,
-        speed: 1,
-        opacity_min: 0.1,
-        sync: false
-      }
-    },
-    size: {
-      value: 8,
-      random: true,
-      anim: {
-        enable: false,
-        speed: 10,
-        size_min: 10,
-        sync: false
-      }
-    },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#808080",
-      opacity: 0.4,
-      width: 1
-    },
-    move: {
-      enable: true,
-      speed: 5,
-      direction: "none",
-      random: false,
-      straight: false,
-      out_mode: "out",
-      bounce: false,
-      attract: {
-        enable: false,
-        rotateX: 600,
-        rotateY: 1200
-      }
+    this.character = "*";
+    this.lifeSpan = 120; //ms
+    this.initialStyles ={
+      "position": "absolute",
+      "display": "block",
+      "pointerEvents": "none",
+      "z-index": "10000000",
+      "fontSize": "16px",
+      "will-change": "transform"
+    };
+
+    // Init, and set properties
+    this.init = function(x, y, color) {
+
+      this.velocity = {
+        x:  (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+        y: 1
+      };
+      
+      this.position = {x: x - 10, y: y - 20};
+      this.initialStyles.color = color;
+
+      this.element = document.createElement('span');
+      this.element.innerHTML = this.character;
+      applyProperties(this.element, this.initialStyles);
+      this.update();
+      
+      document.querySelector('.bg').appendChild(this.element);
+    };
+    
+    this.update = function() {
+      this.position.x += this.velocity.x;
+      this.position.y += this.velocity.y;
+      this.lifeSpan--;
+      
+      this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
     }
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: {
-        enable: true,
-        mode: "grab"
-      },
-      onclick: {
-        enable: true,
-        mode: "push"
-      },
-      resize: true
-    },
-    modes: {
-      grab: {
-        distance: 140,
-        line_linked: {
-          opacity: 1
-        }
-      },
-      bubble: {
-        distance: 400,
-        size: 40,
-        duration: 2,
-        opacity: 8,
-        speed: 3
-      },
-      repulse: {
-        distance: 200,
-        duration: 0.4
-      },
-      push: {
-        particles_nb: 4
-      },
-      remove: {
-        particles_nb: 2
-      }
+    
+    this.die = function() {
+      this.element.parentNode.removeChild(this.element);
     }
-  },
-  retina_detect: true
-});
+    
+  }
+  
+  /**
+   * Utils
+   */
+  
+  // Applies css `properties` to an element.
+  function applyProperties( target, properties ) {
+    for( var key in properties ) {
+      target.style[ key ] = properties[ key ];
+    }
+  }
+  
+  init();
+})();
