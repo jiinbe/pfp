@@ -206,6 +206,12 @@ background: #4b4b4b;
 }
 }
 
+#particles-js {
+position: absolute;
+height: 100%;
+width: 100%;
+}
+
 @media (min-width: 640px) {
 main {
 max-width: none;
