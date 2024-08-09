@@ -26,7 +26,7 @@ canvas.add(img).setActiveObject(img).renderAll();
 reader.readAsDataURL(e.target.files[0]);
 }
 
-fabric.Image.fromURL('image.png', function(img) {
+fabric.Image.fromURL('twibbon.png', function(img) {
 canvas.setOverlayImage(img, canvas.renderAll.bind(canvas));
 });
 	
