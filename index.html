@@ -11,8 +11,7 @@ body {
 background-color: #f0f0f2;
 margin: 0;
 padding: 0;
-font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        
+font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;        
 }
 div {
 width: 600px;
@@ -61,24 +60,20 @@ width: auto;
 <body>
 <span class="bg"></span>	
 <main>
-<h1>PFP Generator</h1>
+<h1>FREE AND SIMPLE PFP GENERATOR</h1>
+<input type="file" id="uploader" oninput="checkInput()" accept="image/*">
+<p><canvas id="c">Your browser does not support the canvas element.</canvas></p
 <p>
-<img src="" id="avatar">
-<img src="img/twibbon.png" id="frame">
+<button onclick="selectFile()">PILIH FILE</button>
+<button id="save" onclick="dL()" disabled>DOWNLOAD</button>
+<button id="shared" disabled>SHARE</button>
 </p>
-<p><canvas id="canvas">This text is displayed if your browser does not support HTML5 Canvas.</canvas></p>
-<p>
-<div class="controls">
-<label for="scale">Scale:</label>
-<button id="output"></button>
-<input id="scale" type="range">
-<p><input type="file" name="image" id="imageupload" accept="image/*"></p>
-<p>
-<button onclick="selectFile()">Pilih File</button>
-<button id="dl" disabled>Download</button>
-<button onclick="shareCanvas()"><i class="fa fa-share-alt"></i></button>
-</p>
-</div>
+<h1>Tutorial:</h1>
+<ol>
+<li>Klik <strong>Pilih File</strong> dan tambahkan foto terbaik Anda.</li>
+<li>Lalu pas kan foto Anda dalam bingkai dengan cara menggeser foto.</li>
+<li>Jika sudah pas, silahkan klik <strong>Download</strong> dan <strong>Share</strong> media sosial Anda.</li>
+</ol>
 </main>
 	
 <script src="js/fabric.min.js"></script>
