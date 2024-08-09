@@ -27,6 +27,7 @@ max-width: 100%;
 </head>
 
 <body>
+<span class="bg"></span>
 <div class="main">
 <h1>FREE AND SIMPLE PFP GENERATOR</h1>
 <input type="file" id="uploader" oninput="checkInput()" accept="image/*">
@@ -43,12 +44,12 @@ max-width: 100%;
 <li>Jika sudah pas, silahkan klik <strong>Download</strong> dan <strong>Share</strong> media sosial Anda.</li>
 </ol>
 </div>
-<script src="bg.js"></script>
+<script src="js/bg.js"></script>
 <script>	
 var canvas = new fabric.Canvas('c');
 	
-canvas.setWidth(600);
-canvas.setHeight(600);
+canvas.setWidth(640);
+canvas.setHeight(640);
 canvas.selection = false;
 canvas.backgroundColor = 'gray';
 	
