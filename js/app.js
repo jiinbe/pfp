@@ -78,3 +78,10 @@ alert('navigator.share not available');
 }
 })
 });
+
+// hidden button
+$(document).ready(function(){
+$("#save").click(function(){
+$("#finput").hide();
+});
+});
