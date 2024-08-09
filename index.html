@@ -45,16 +45,15 @@
 
 <script>
 var max = 3,
-    min = 0,
-    step = 0.1,
-    output = $('#output').text(min);
+min = 0,
+step = 0.1,
+output = $('#output').text(min);
 
 $("#scale")
-    .attr({'max': max, 'min':min, 'step': step,'value': String(min)})
-    .on('input change', function() {
-    
-        output.text(this.value);
-    });
+.attr({'max': max, 'min':min, 'step': step,'value': String(min)})
+.on('input change', function() {
+output.text(this.value);
+});
 </script>
 </body>
 </html>
