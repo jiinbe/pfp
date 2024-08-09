@@ -1,7 +1,7 @@
 var canvas = new fabric.Canvas('c');
 	
-canvas.setWidth(600);
-canvas.setHeight(600);
+canvas.setWidth(640);
+canvas.setHeight(640);
 canvas.selection = false;
 canvas.backgroundColor = 'gray';
 	
@@ -26,7 +26,7 @@ canvas.add(img).setActiveObject(img).renderAll();
 reader.readAsDataURL(e.target.files[0]);
 }
 
-fabric.Image.fromURL('image.png', function(img) {
+fabric.Image.fromURL('img/mask.png', function(img) {
 canvas.setOverlayImage(img, canvas.renderAll.bind(canvas));
 });
 	
@@ -63,7 +63,7 @@ console.log(filesArray);
 const shareData = {
 title: "FREE AND SIMPLE PFP GENERATOR",
 text: "FREE AND SIMPLE PFP GENERATOR",
-url: "https://kisahklasik.github.io/twibbone/",
+url: "https://badut.pages.dev/",
 files: filesArray
 };
 console.log(shareData);
