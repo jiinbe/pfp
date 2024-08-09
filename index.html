@@ -22,7 +22,7 @@
 <input type="file" id="uploader" oninput="checkInput()" accept="image/*">
 <p><canvas id="c">Your browser does not support the canvas element.</canvas></p
 <p>
-<button onclick="selectFile()">PILIH FILE</button>
+<button id="finput" onclick="selectFile()">PILIH FILE</button>
 <button id="save" onclick="dL()" disabled>DOWNLOAD</button>
 <button id="shared" disabled>SHARE</button>
 </p>
@@ -53,7 +53,7 @@ share.disabled = input === '';
 <script>
 $(document).ready(function(){
 $("#save").click(function(){
-$("#uploader").hide();
+$("#finput").hide();
 });
 });
 </script>
