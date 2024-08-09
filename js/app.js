@@ -1,7 +1,7 @@
 var canvas = new fabric.Canvas('c');
 	
-canvas.setWidth(1024);
-canvas.setHeight(1024);
+canvas.setWidth(600);
+canvas.setHeight(600);
 canvas.selection = false;
 canvas.backgroundColor = 'gray';
 	
