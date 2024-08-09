@@ -1,6 +1,7 @@
 html, body {
 overflow: hidden;
 overscroll-behavior: none; 
+font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .main {
 margin: 20px auto;
