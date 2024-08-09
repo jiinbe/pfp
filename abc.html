@@ -28,10 +28,20 @@ max-width: 100%;
 
 <body>
 <div class="main">
-<h1>Example Domain</h1>
-<p>This domain is for use in illustrative examples in documents. You may use this
-domain in literature without prior coordination or asking for permission.</p>
-<p><a href="https://www.iana.org/domains/example">More information...</a></p>
+<h1>FREE AND SIMPLE PFP GENERATOR</h1>
+<input type="file" id="uploader" oninput="checkInput()" accept="image/*">
+<p><canvas id="c">Your browser does not support the canvas element.</canvas></p
+<p>
+<button onclick="selectFile()">PILIH FILE</button>
+<button id="save" onclick="dL()" disabled>DOWNLOAD</button>
+<button id="shared" disabled>SHARE</button>
+</p>
+<h1>Tutorial:</h1>
+<ol>
+<li>Klik <strong>Pilih File</strong> dan tambahkan foto terbaik Anda.</li>
+<li>Lalu pas kan foto Anda dalam bingkai dengan cara menggeser foto.</li>
+<li>Jika sudah pas, silahkan klik <strong>Download</strong> dan <strong>Share</strong> media sosial Anda.</li>
+</ol>
 </div>
 </body>
 </html>
