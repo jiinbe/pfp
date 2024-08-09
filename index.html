@@ -5,54 +5,15 @@
 
 <meta charset="utf-8" />
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<!--<meta name="viewport" content="width=device-width, initial-scale=1" />-->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Twibbon adalah cara sederhana untuk mengekspresikan dukungan dan partisipasi kita dalam suatu acara atau gerakan." />
 	
 <link rel="icon" type="image/x-icon" href="favicon.png">
-<link rel="stylesheet" href="css/app.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="js/jquery.min.js"></script>
-<script src="js/fabric.min.js"></script>
-<script src="js/FileSaver.js"></script>
-<script src="js/canvas-toBlob.js"></script>
 </head>
-<body>
-<span class="bg"></span>	
+<body>	
 <main>
-<h1>FREE AND SIMPLE PFP GENERATOR</h1>
-<input type="file" id="uploader" oninput="checkInput()" accept="image/*">
-<p><canvas id="c">Your browser does not support the canvas element.</canvas></p
-<p>
-<button onclick="selectFile()">PILIH FILE</button>
-<button id="save" onclick="dL()" disabled>DOWNLOAD</button>
-<button id="shared" disabled>SHARE</button>
-</p>
-<h1>Tutorial:</h1>
-<ol>
-<li>Klik <strong>Pilih File</strong> dan tambahkan foto terbaik Anda.</li>
-<li>Lalu pas kan foto Anda dalam bingkai dengan cara menggeser foto.</li>
-<li>Jika sudah pas, silahkan klik <strong>Download</strong> dan <strong>Share</strong> media sosial Anda.</li>
-</ol>
-</main>
-<script src="js/app.js"></script>
-<script src="js/share.js"></script>
-<script src="js/bg.js"></script>
 
-<script>
-function dL() {
-var input = document.getElementById("uploader");
-input.disabled = true;
-}
-</script>
-<script>
-function checkInput() {
-var input = document.getElementById('uploader').value;
-var button = document.getElementById('save');
-var share = document.getElementById('shared');
-button.disabled = input === '';
-share.disabled = input === '';
-}
-</script>
+</main>
 
 </body>
 </html>
