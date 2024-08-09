@@ -83,17 +83,21 @@ width: auto;
 <script src="js/bg.js"></script>
 
 <script>
-var max = 3,
-min = 0,
-step = 0.1,
-output = $('#output').text(min);
-
-$("#scale")
-.attr({'max': max, 'min':min, 'step': step,'value': String(min)})
-.on('input change', function() {
-output.text(this.value);
-});
+function dL() {
+var input = document.getElementById("uploader");
+input.disabled = true;
+}
 </script>
+<script>
+function checkInput() {
+var input = document.getElementById('uploader').value;
+var button = document.getElementById('save');
+var share = document.getElementById('shared');
+button.disabled = input === '';
+share.disabled = input === '';
+}
+</script>
+
 </body>
 </html>
 -->
